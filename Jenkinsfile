@@ -1,11 +1,13 @@
 pipeline {
     agent any
     environment {
-        JURL = 'http://artifactory-unified.soleng-us.jfrog.team/'
-        RT_URL = 'http://artifactory-unified.soleng-us.jfrog.team/artifactory'
+        //JURL = 'http://artifactory-unified.soleng-us.jfrog.team/'
+        JURL = 'http://nagag-jpd1.devopsacc.team/'
+        //RT_URL = 'http://artifactory-unified.soleng-us.jfrog.team/artifactory'
+        RT_URL = 'http://nagag-jpd1.devopsacc.team/artifactory'
         TOKEN = credentials('nagag-jpd1')
         ARTIFACTORY_LOCAL_DEV_REPO = 'soldocker-demo-dev'
-        ARTIFACTORY_DOCKER_REGISTRY = 'soldocker-demo-dev.artifactory-unified.soleng-us.jfrog.team'
+        ARTIFACTORY_DOCKER_REGISTRY = 'soldocker-demo-dev.nagag-jpd1.devopsacc.team'
         DOCKER_REPOSITORY = 'soldocker-demo-dev'
         IMAGE_NAME = 'sol_docker_demo'
         IMAGE_VERSION = '1.0.0'
@@ -64,8 +66,8 @@ pipeline {
         
         stage ('Push image to Artifactory') {
             steps {
-                sh 'export DOCKER_OPTS+=" --insecure-registry soldocker-demo-dev.artifactory-unified.soleng-us.jfrog.team"'
-                sh 'docker login -u nishu -p nishuJFROG_01 soldocker-demo-dev.artifactory-unified.soleng-us.jfrog.team'
+                sh 'export DOCKER_OPTS+=" --insecure-registry soldocker-demo-dev.nagag-jpd1.devopsacc.team"'
+                sh 'docker login -u nishu -p nishuJFROG_01 soldocker-demo-dev.nagag-jpd1.devopsacc.team'
               //  sh 'docker push ${ARTIFACTORY_DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}'
                 sh 'jf rt docker-push ${ARTIFACTORY_DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION} ${DOCKER_REPOSITORY} --build-name="${BUILD_NAME}" --build-number=${BUILD_ID} --url ${RT_URL} --access-token ${TOKEN}'
        
