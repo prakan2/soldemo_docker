@@ -2,9 +2,9 @@ pipeline {
     agent any
     environment {
         //JURL = 'http://artifactory-unified.soleng-us.jfrog.team/'
-        JURL = 'http://nagag-jpd1.devopsacc.team/'
+        JURL = 'https://nagag-jpd1.devopsacc.team/'
         //RT_URL = 'http://artifactory-unified.soleng-us.jfrog.team/artifactory'
-        RT_URL = 'http://nagag-jpd1.devopsacc.team/artifactory'
+        RT_URL = 'https://nagag-jpd1.devopsacc.team/artifactory'
         TOKEN = credentials('nagag-jpd1')
         ARTIFACTORY_LOCAL_DEV_REPO = 'soldocker-demo-dev'
         ARTIFACTORY_DOCKER_REGISTRY = 'soldocker-demo-dev.nagag-jpd1.devopsacc.team'
