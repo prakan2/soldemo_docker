@@ -3,7 +3,7 @@ pipeline {
     environment {
         JURL = 'https://nagag-jpd1.devopsacc.team/'
         RT_URL = 'https://nagag-jpd1.devopsacc.team/artifactory'
-        TOKEN = credentials('art_token')
+        TOKEN = credentials('nagag-jpd1')
         ARTIFACTORY_LOCAL_DEV_REPO = 'soldocker-demo-dev'
         ARTIFACTORY_LOCAL_TEST_REPO = 'soldocker-demo-test'
         
