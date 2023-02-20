@@ -48,7 +48,7 @@ pipeline {
         stage ('Config Maven'){
             steps {
                 dir('complete'){
-                    sh 'jf mvnc --repo-resolve-releases=soldocker-demo-virtual --repo-resolve-snapshots=soldocker-demo-virtual --repo-deploy-releases=soldocker-demo-virtual --repo-deploy-snapshots=soldocker-demo-virtual'
+                    sh 'jf mvnc --repo-resolve-releases=soldocker_demo_virtual --repo-resolve-snapshots=soldocker_demo_virtual --repo-deploy-releases=soldocker_demo_virtual --repo-deploy-snapshots=soldocker_demo_virtual'
                 }
             }
         }
