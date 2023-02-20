@@ -21,18 +21,19 @@ pipeline {
     }
  
     stages {
-        stage ('Install JFrgo CLI') {
-            steps {
-                rtServer (
-                    id: 'nagag-jpd1',
-                    url: 'http://nagag-jpd1.devopsacc.team/artifactory',
-                    credentialsId: 'nagag-jpd1'
-                )
-            }
-        }
-         stage ('Config JFrgo CLI') {
+//      stage ('Install JFrgo CLI') {
+//             steps {
+//                 rtServer (
+//                     id: 'nagag-jpd1',
+//                     url: 'http://nagag-jpd1.devopsacc.team/artifactory',
+//                     credentialsId: 'nagag-jpd1'
+//                 )
+//             }
+//         }
+        stage ('Config JFrgo CLI') {
             steps {
                  // echo 'Done'
+                sh 'curl -fL https://install-cli.jfrog.io | sh'
                 sh 'jf c add ${SERVER_ID} --interactive=false --overwrite=true --access-token=${TOKEN} --url=${JURL}'
                 sh 'jf config use ${SERVER_ID}'
             }
