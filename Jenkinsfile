@@ -6,9 +6,9 @@ pipeline {
         //RT_URL = 'http://artifactory-unified.soleng-us.jfrog.team/artifactory'
         RT_URL = 'http://nagag-jpd1.devopsacc.team/artifactory'
         TOKEN = credentials('nagag-jpd1')
-        ARTIFACTORY_LOCAL_DEV_REPO = 'soldocker-demo-dev'
-        ARTIFACTORY_DOCKER_REGISTRY = 'soldocker-demo-dev.nagag-jpd1.devopsacc.team'
-        DOCKER_REPOSITORY = 'soldocker-demo-dev'
+        ARTIFACTORY_LOCAL_DEV_REPO = 'soldocker_demo_dev'
+        ARTIFACTORY_DOCKER_REGISTRY = 'soldocker_demo_dev.nagag-jpd1.devopsacc.team'
+        DOCKER_REPOSITORY = 'soldocker_demo_dev'
         IMAGE_NAME = 'sol_docker_demo'
         IMAGE_VERSION = '1.0.0'
         SERVER_ID = 'k8s'
