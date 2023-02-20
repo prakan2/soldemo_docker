@@ -15,9 +15,9 @@ pipeline {
         BUILD_NAME = "SolDemo_docker_maven_new"
     }
     tools {
-       // maven "maven-3.6.3"
-        maven 'MAVEN_TOOL'
-       // jfrog 'proscli'
+        maven "maven-3.6.3"
+       // maven 'MAVEN_TOOL'
+        //jfrog 'proscli'
     }
  
     stages {
