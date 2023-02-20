@@ -14,7 +14,7 @@ pipeline {
         SERVER_ID = 'k8s'
         BUILD_NAME = "SolDemo_docker_maven_new"
         PATH="${PATH}:/var/jenkins_home/bin" 
-        BUILD_URL="http://localhost:8888/view/SolDemo_docker/job/SolDemo_dev/"
+        MY_BUILD_URL="http://localhost:8888/view/SolDemo_docker/job/SolDemo_dev/"
     }
     tools {
           maven "maven-3.6.3"
@@ -94,7 +94,7 @@ pipeline {
                 //Collect VCS details from git and add them to the build
                 sh 'jf rt bag "${BUILD_NAME}" ${BUILD_ID}'
                 //Publish build info
-                sh 'jf rt bp "${BUILD_NAME}" ${BUILD_ID} --build-url=${BUILD_URL}'
+                sh 'jf rt bp "${BUILD_NAME}" ${BUILD_ID} --build-url=${MY_BUILD_URL}'
                 //Promote the build
                 sh 'jf rt bpr --status=Development --props="status=Development" "${BUILD_NAME}" ${BUILD_ID} ${ARTIFACTORY_LOCAL_DEV_REPO}'
             }
