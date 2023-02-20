@@ -17,6 +17,7 @@ pipeline {
     tools {
        // maven "maven-3.6.3"
         maven 'MAVEN_TOOL'
+        jfrog 'proscli'
     }
  
     stages {
