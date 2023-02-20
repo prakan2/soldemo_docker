@@ -22,13 +22,14 @@ pipeline {
     stages {
         stage ('Config JFrgo CLI') {
             steps {
-                
+                  echo 'Done'
         //        sh 'jf c add ${SERVER_ID} --interactive=false --overwrite=true --access-token=${TOKEN} --url=${JURL}'
         //        sh 'jf config use ${SERVER_ID}'
             }
         }
         stage ('Ping to Artifactory') {
             steps {
+                 echo 'Ok'
         //       sh 'jf rt ping'
             }
         }
