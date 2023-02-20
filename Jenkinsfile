@@ -35,9 +35,10 @@ pipeline {
         stage ('Config JFrgo CLI') {
             steps {
                   echo 'Done'
+                   sh 'jf c add k8s --interactive=false --overwrite=true --access-token=eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJLZnVSSW4zc2Npcm1mdTFQZlFWcEQyWklXWWs4aXhrbFRHZGR5M3ZCRFBnIn0.eyJleHQiOiJ7XCJyZXZvY2FibGVcIjpcInRydWVcIn0iLCJzdWIiOiJqZmFjQDAxZ3FzYnlxbXhzZXNlMHN2eXQ4cXgwZHF4XC91c2Vyc1wvbmlzaHUiLCJzY3AiOiJhcHBsaWVkLXBlcm1pc3Npb25zXC91c2VyIiwiYXVkIjoiKkAqIiwiaXNzIjoiamZmZUAwMDAiLCJpYXQiOjE2NzY4NzAwNzQsImp0aSI6IjMzM2FkMjEyLWE3ODQtNDNjMS1iOGJkLTAxNmEzNmQ4ZjIxMiJ9.YyY4r_XxEZ_P5PRDIVicOh2ltHARxfxQLUH9UtHWLiTzzCwnAG1HB1YU2tQKFhe8Cujp7tPnMY9d4Wo0NCoY54nsOeUEarFX0ws1sQKYv80tJ3EY0ovhQyCQP72MRFkNGmD7nc4O-IjkB05yCkswmZlMnxNcHbVuY8bqhPW0vU9ctlrY6FpS2Z7a10Fl-TlQnyQOcTRmjV6iTlWHRJFmvUlnmNyKzM7_85nMX0ec8wCrh2gJvm-DCETmWWvIM7xxMZz7x7YW6zEF0QF9CmIHjuLlgI_PGN7DCARqFY7NjfIs25KGKOqKJ-F34B540T24qL8qMiZiACoBj60uZbTvpQ --url=http://nagag-jpd1.devopsacc.team/'
 //                 sh 'curl -fL https://install-cli.jfrog.io | sh'
 //                 sh 'jf c add ${SERVER_ID} --interactive=false --overwrite=true --access-token=${TOKEN} --url=${JURL}'
-//                 sh 'jf config use ${SERVER_ID}'
+                   sh 'jf config use ${SERVER_ID}'
             }
         }
         stage ('Ping to Artifactory') {
