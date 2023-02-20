@@ -32,16 +32,16 @@ pipeline {
 //         }
         stage ('Config JFrgo CLI') {
             steps {
-                 // echo 'Done'
-                sh 'curl -fL https://install-cli.jfrog.io | sh'
-                sh 'jf c add ${SERVER_ID} --interactive=false --overwrite=true --access-token=${TOKEN} --url=${JURL}'
-                sh 'jf config use ${SERVER_ID}'
+                  echo 'Done'
+//                 sh 'curl -fL https://install-cli.jfrog.io | sh'
+//                 sh 'jf c add ${SERVER_ID} --interactive=false --overwrite=true --access-token=${TOKEN} --url=${JURL}'
+//                 sh 'jf config use ${SERVER_ID}'
             }
         }
         stage ('Ping to Artifactory') {
             steps {
-               //  echo 'Ok'
-               sh 'jf rt ping'
+                 echo 'Ok'
+       //        sh 'jf rt ping'
             }
         }
         stage ('Config Maven'){
