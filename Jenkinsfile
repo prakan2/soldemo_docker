@@ -41,8 +41,8 @@ pipeline {
         }
         stage ('Ping to Artifactory') {
             steps {
-                 //echo 'Ok'
-                 sh 'jf rt ping'
+                 echo 'Ok'
+          //       sh 'jf rt ping'
             }
         }
         stage ('Config Maven'){
@@ -81,8 +81,8 @@ pipeline {
             steps {
                 sh 'export DOCKER_OPTS+=" --insecure-registry nagag-jpd1.devopsacc.team"'
                 sh 'docker login -u nishu -p nishuJFROG_01 nagag-jpd1.devopsacc.team'
-              //  sh 'docker push ${ARTIFACTORY_DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}'
-                sh 'jf rt docker-push ${ARTIFACTORY_DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION} ${DOCKER_REPOSITORY} --build-name="${BUILD_NAME}" --build-number=${BUILD_ID} --url ${RT_URL} --access-token ${TOKEN}'
+                sh 'docker push ${ARTIFACTORY_DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}'
+              //  sh 'jf rt docker-push ${ARTIFACTORY_DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION} ${DOCKER_REPOSITORY} --build-name="${BUILD_NAME}" --build-number=${BUILD_ID} --url ${RT_URL} --access-token ${TOKEN}'
             }
         }
       
