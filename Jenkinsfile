@@ -28,6 +28,7 @@ pipeline {
                     url: 'http://nagag-jpd1.devopsacc.team/artifactory',
                     credentialsId: 'nagag-jpd1'
                 )
+            }
             steps {
                  // echo 'Done'
                 sh 'jf c add ${SERVER_ID} --interactive=false --overwrite=true --access-token=${TOKEN} --url=${JURL}'
