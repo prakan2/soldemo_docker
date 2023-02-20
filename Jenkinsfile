@@ -7,7 +7,7 @@ pipeline {
         RT_URL = 'http://nagag-jpd1.devopsacc.team/artifactory'
         TOKEN = credentials('nagag-jpd1')
         ARTIFACTORY_LOCAL_DEV_REPO = 'soldocker_demo_dev'
-        ARTIFACTORY_DOCKER_REGISTRY = 'soldocker_demo_dev.nagag-jpd1.devopsacc.team'
+        ARTIFACTORY_DOCKER_REGISTRY = 'nagag-jpd1.devopsacc.team/soldocker_demo_dev'
         DOCKER_REPOSITORY = 'soldocker_demo_dev'
         IMAGE_NAME = 'sol_docker_demo'
         IMAGE_VERSION = '1.0.0'
@@ -16,8 +16,8 @@ pipeline {
         PATH="${PATH}:/var/jenkins_home/bin"
     }
     tools {
-        //maven "maven-3.6.3"
-        maven 'MAVEN_TOOL'
+          maven "maven-3.6.3"
+      //  maven 'MAVEN_TOOL'
         //jfrog 'proscli'
     }
  
@@ -83,7 +83,6 @@ pipeline {
                 sh 'docker login -u nishu -p nishuJFROG_01 nagag-jpd1.devopsacc.team'
               //  sh 'docker push ${ARTIFACTORY_DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}'
                 sh 'jf rt docker-push ${ARTIFACTORY_DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION} ${DOCKER_REPOSITORY} --build-name="${BUILD_NAME}" --build-number=${BUILD_ID} --url ${RT_URL} --access-token ${TOKEN}'
-       
             }
         }
       
