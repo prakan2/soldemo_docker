@@ -13,10 +13,11 @@ pipeline {
         IMAGE_VERSION = '1.0.0'
         SERVER_ID = 'k8s'
         BUILD_NAME = "SolDemo_docker_maven_new"
+        PATH="${PATH}:/var/jenkins_home/bin"
     }
     tools {
-        maven "maven-3.6.3"
-       // maven 'MAVEN_TOOL'
+        //maven "maven-3.6.3"
+        maven 'MAVEN_TOOL'
         //jfrog 'proscli'
     }
  
@@ -40,8 +41,8 @@ pipeline {
         }
         stage ('Ping to Artifactory') {
             steps {
-                 echo 'Ok'
-       //        sh 'jf rt ping'
+                 //echo 'Ok'
+                 sh 'jf rt ping'
             }
         }
         stage ('Config Maven'){
