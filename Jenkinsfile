@@ -13,7 +13,8 @@ pipeline {
         IMAGE_VERSION = '1.0.0'
         SERVER_ID = 'k8s'
         BUILD_NAME = "SolDemo_docker_maven_new"
-        PATH="${PATH}:/var/jenkins_home/bin"
+        PATH="${PATH}:/var/jenkins_home/bin" 
+        BUILD_URL="http://localhost:8888/view/SolDemo_docker/job/SolDemo_dev/"
     }
     tools {
           maven "maven-3.6.3"
