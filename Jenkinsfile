@@ -43,8 +43,8 @@ pipeline {
         }
         stage ('Ping to Artifactory') {
             steps {
-                 echo 'Ok'
-          //       sh 'jf rt ping'
+           //      echo 'Ok'
+                 sh 'jf rt ping'
             }
         }
         stage ('Config Maven'){
