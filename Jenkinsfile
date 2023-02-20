@@ -21,7 +21,7 @@ pipeline {
     }
  
     stages {
-        stage ('Config JFrgo CLI') {
+        stage ('Install JFrgo CLI') {
             steps {
                 rtServer (
                     id: 'nagag-jpd1',
@@ -29,6 +29,8 @@ pipeline {
                     credentialsId: 'nagag-jpd1'
                 )
             }
+        }
+         stage ('Config JFrgo CLI') {
             steps {
                  // echo 'Done'
                 sh 'jf c add ${SERVER_ID} --interactive=false --overwrite=true --access-token=${TOKEN} --url=${JURL}'
