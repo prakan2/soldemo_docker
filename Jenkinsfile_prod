@@ -4,8 +4,8 @@ pipeline {
         JURL = 'https://nagag-jpd1.devopsacc.team/'
         RT_URL = 'https://nagag-jpd1.devopsacc.team/artifactory'
         TOKEN = credentials('nagag-jpd1')
-        ARTIFACTORY_LOCAL_STAGING_REPO = 'soldocker-demo-staging'
-        ARTIFACTORY_LOCAL_PRODUCTION_REPO = 'soldocker-demo-prod'
+        ARTIFACTORY_LOCAL_STAGING_REPO = 'soldocker_demo_staging'
+        ARTIFACTORY_LOCAL_PRODUCTION_REPO = 'soldocker_demo_prod'
         
         SERVER_ID = 'k8s'
     }
